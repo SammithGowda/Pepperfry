@@ -4,7 +4,7 @@ function headernavbar(){
         <h1>pepperfry</h1>
     </div>
     <div id="root-pat">
-        <span>Cart ----</span>
+    <a href="payment.html"><span>Cart ----</span></a>
         <span> Delivery & Billing Address ----</span>
         <span>Payment</span>
     </div>

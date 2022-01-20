@@ -9,155 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/body.css">
     <script src="https://kit.fontawesome.com/31c1b9aefb.js" crossorigin="anonymous"></script>
 </head>
 <style>
-    #cdiv{
-      border: 2px solid yellow;
-  }
-  #middle_inner_div{
-      border:2px solid blue;
-      width: 50%;
-      /* margin: auto; */
-      
-  }
-  .accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  height: 70px;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
-
-}
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-
-.active, .accordion:hover {
-  background-color: #ccc;
-}
-
-.accordion:after {
-  content: '\002B';
-  color: red;
-  font-weight: bold;
-  float: right;
-  margin-left: 15px;
-}
-
-.active:after {
-  content: "\2212";
-}
-#upper_box{
-    /* border: 2px solid red; */
-    display: flex;
-
-}
-#upper_box>div{
-    /* border: 2px solid green; */
-    text-align: center;
-    flex: 1;
-    height: 200px;
-}
-#input_gmail{
-    height: 30px;
-    width: 60%;
-    border: 2px solid black;
-    margin: 20px;
-
-}
-#sigin_butn{
-    height: 40px;
-    width: 40%;
-    background-color: #f16521;
-}
-#G_F>button{
-margin: 20px;
-width: 100px;
-height: 40px;
-}
-#add_div{
-  
-
-}
-#xxx>input{
-    height: 25px;
-    width: 40%;
-    border: 2px solid black;
-    margin: 20px;
-    padding: 5px;
-
-    
-}
-#xxx{
-    /* border: 2px solid blue; */
-    width: 80%;
-    margin: auto;
-    margin-top: 20px;
-}
-#payment_div{
-    /* border: 2px solid red; */
-    margin-top: 15px;
-    height: 300px;
-    display: flex;
-}
-#card_ooption{
-    border: 2px solid green;
-    flex: 1;
-}
-#display_card{
-    border: .5px solid brown;
-    flex: 2;
-    text-align: center;
-}
-
-
-#all_card_div{
-    /* border: 2px solid brown; */
-    width: 60%;
-    /* height: 60%; */
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    
-    
-
-}
-#all_card_div>div{
-    /* border: 2px solid red; */
-    width: 35%;
-    justify-content:space-between;
-    margin: 15px;
-
-}
-#proceed_btn{
-    width: 60%;
-    height: 50px;
-    margin-top: 15px;
-    background-color: #f16521;
-    
-    
-
-}
-#card_ooption>div{
-    width: 80%;
-    height: 30px;
-    border: 2px solid green;
-    padding: 15px;
-    margin: auto;
-    margin-top: 5px;
-}
-
+   
 
 </style>
 <body>
@@ -168,9 +24,21 @@ height: 40px;
         <div id="middle_inner_div">
             <button class="accordion">ORDER SUMMARY</button>
             <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <!-- ORDER summary -->
+                <div id="order_summary_first_div">
+                    <p>(Item <button id="cart_display_button"></button>)</p>
+                    <a href=""><p>Edit Cart</p></a>
+                </div>
+            
+                <div id="added_items">
+
+                </div>
+
+
+
+
             </div>
-            <br>
+            
             
             <button class="accordion"> SHIPPING & BILLING DETAILS </button>
             <div class="ppanel">
@@ -180,7 +48,7 @@ height: 40px;
                     <label>Email Id</label>
                     <input type="text"  id="input_gmail" placeholder="Email" required><br>
                     <label>Password</label>
-                    <input type="password"  id="input_gmail" placeholder="Password" required><br>
+                    <input type="password"  id="input_password" placeholder="Password" required><br>
                     <button id="sigin_butn"> SIGIN IN </button>
                 </form>
                 </div>
@@ -192,34 +60,46 @@ height: 40px;
             </div>
           
                 <div id="addres_div">
-                <div id="xxx">
-                <h2>Add Shipping Address</h2>
-
-                <label>Name</label>
-                <input type="text" placeholder="Name" id="name"><br>
-                 <label>Mobile Number</label>
-                <input type="number" placeholder="Mobile Number" id="phonenumber"><br>
-                <label>Pincode</label>
-                <input type="text" placeholder="Pincode" id="pincode"><br>
-                <label>Address</label>
-                <input type="textarea" placeholder="Address" id="address"><br>
-               
-                <input type="text" placeholder="place" id="name">
-                
-                <input type="text" placeholder="State" id="name">
-              
-                <input type="text" placeholder="Country" id="name"> 
-
-            </div>
-
-
-
-
+                <div id="Shipping_text">
+                <h2>Add Shipping Address</h2></div>
+                <div id="addres_info_div">
+                    <div id="name_info_div">
+                         <p>Name</p>
+                         <p>Mobile Number</p>
+                         <p>Pincode</p>
+                         <p>Address</p>
+                    </div>
+                    <div id="add_input_div">
+                        <input type="text" name="name" id="c_name" placeholder=" Name"><br>
+                        <input type="number" name="phonenumber" id="c_number" placeholder="Phone Number">
+                        <input type="number" name="" id="c_pincode" placeholder="Pin Code"><br>
+                        <textarea id="textarea"> </textarea><br>
+                        <div>
+                        <input id="c_place" type="text" placeholder="Place">
+                        <select id="dropup">
+                                <option value="">Select State</option>
+                              <option value="Dehli">Dehli</option>
+                              <option value="Karnataka">Karnataka</option>
+                              <option value="Pune">Pune</option>
+                           
+                            
+                              <option value="Maharashtra">Maharashtra</option>
+                              <option value="Goa">Goa</option>
+                              <option value="Haryana">Haryana</option>
+                            
+                          </select></div>
+                        <input id="c_country" type="text" placeholder="Country"><br>
+                        <button id="add_sav_btn">SAVE&CONTINUE</button>
+                    </div>
                 </div>
+
+               
                 
+
+            </div>
             </div>
                 
-            <br>
+            
             <button class="accordion">PAYMENT</button>
             <div class="panel">
              <!-- payment -->
@@ -231,46 +111,25 @@ height: 40px;
             </div>
             
         </div>
+        <div id="rightabc">
+            <div id="rigth_billing"></div>
+            <div id="more_info">
+                <p>No Cost EMI Available starting <a href="payment.html">₹ 1,940/month.</a> EMI Starting <a href="payment.html">₹ 548/month</a></p>
+                <input type="checkbox" name="" id="">
+                <label for="">Contribute Rs.99 For COVID Relief Through GiveIndia.</label>
+
+            </div>
+           
+        </div>
+        
     </div>
+
+    
+
+
     <div id="footernav"></div>
     
-    <!-- footer -->
-    <!-- <div id="pay_ment_nav_bar_footer">
-        <div id="inside-footer-div">
-            <div id="first-card-img">
-             <p>WE ACCEPT</p>
-             <div id="cards-img-div">
-            <img id="same-img-id" src="https://ii2.pepperfry.com/images/new-visa-logo.png" alt="">
-            <img id="same-img-id" src="https://ii2.pepperfry.com/images/800-px-maestro-logosvg.png" alt="">
-            <img id="same-img-id" src="https://ii2.pepperfry.com/images/american-express-icon.png" alt="">
-            <img id="same-img-id" src="https://ii2.pepperfry.com/images/d-i-n-e-r-s-c-a-r-d-1.png" alt="">
-            <img id="same-img-id" src="https://ii2.pepperfry.com/images/220-px-ru-paysvg.png" alt=""><br>
-            <img id="same-img-id" src="https://ii2.pepperfry.com/images/mastercard-logo-png.png" alt="">
-            <img id="same-img-id" src="https://ii2.pepperfry.com/images/982-wallet.png" alt="">
-                <span>Wallets</span>
-             
-        </div>
-            </div>
-            <div id="second-buy-safe">
-              <p>BUY SAFE, PAY EASY</p> 
-              <div id="cards-img-div">
-                 <p> <i class="far fa-calendar-times"></i>No Cost EMIs: Now pay in easy installments at no additional cost</p> 
-              </div> 
-            </div>
-            <div id="third-secure">
-                <p>100% SAFE & SECURE</p>
-                <div id="cards-img-div">
-                    <img src="https://ii2.pepperfry.com/images/download-1.png" alt="">
-                    <img src="https://ii2.pepperfry.com/images/p-c-i-d-s-s.png" alt="">
-                </div>
-            </div>
-        </div>
-        <div id="copy_rigth_div">
-            <p>Copyright 2021 Pepperfry.com.  All rights Reserved.</p>
-        </div>
-        
-        
-    </div> -->
+   
 </body>
 </html>
 <script type="module">
@@ -302,6 +161,15 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+let billing_amount=2000;
+let Retail_price=4000;
+let assembly_price=1347;
+let total_amount=billing_amount+assembly_price;
+let cart_item=JSON.parse(localStorage.getItem("cartdb"))||[];
+
+    let cart_display_button=document.getElementById("cart_display_button")
+    cart_display_button.innerHTML=cart_item.length
+    
 function paymnet_option(){
     let div= document.createElement("div")
         div.setAttribute("id","debit_credit_card")
@@ -371,7 +239,7 @@ function cards(){
 
     let button=document.createElement("button")
         button.setAttribute("id","proceed_btn")
-        button.innerHTML="buy"
+        button.innerHTML=`PROCEED ${billing_amount}`
     
         let note= document.createElement("p")
             note.innerHTML="Note: You Will Be Asked To Enter Your Card Details On Proceeding With The Selected Payment Options."
@@ -436,7 +304,7 @@ function credit_card(){
 
     let button=document.createElement("button")
         button.setAttribute("id","proceed_btn")
-        button.innerHTML="buy"
+        button.innerHTML=`PROCEED ${billing_amount}`
     
         let note= document.createElement("p")
             note.innerHTML="Note: You Will Be Asked To Enter Your Card Details On Proceeding With The Selected Payment Options."
@@ -452,6 +320,161 @@ function credit_card(){
     document.querySelector("#display_card").append(p,div,button,note)
 
 }
+
+
+
+
+display(cart_item)
+  
+function display(data){
+    cart_item.map((el)=>{
+
+       let div= document.createElement("div")
+            div.setAttribute("id","cart_add_div")
+
+        let img = document.createElement("img")
+            img.setAttribute("id","cart_img")
+            img.src=el.image
+
+        let div_two=document.createElement("div")
+            div_two.setAttribute("id","div_two")
+
+        let p=document.createElement("p")
+            p.innerHTML="Delivery by"
+        
+        let date= document.createElement("p")
+            date.innerHTML=el.date
+
+        let div_three=document.createElement("div")
+            div_three.setAttribute("id","div_three")
+
+        let qty=document.createElement("p")
+            qty.innerHTML=`${el.qrt} Qty`
+
+        let ruppes=document.createElement("p")
+            ruppes.innerHTML=`₹ ${el.price}`
+
+        div_three.append(qty,ruppes)
+
+        div_two.append(p,date,div_three)
+
+
+
+
+        div.append(img,div_two)
+        
+        billing_amount+=Number(el.price)
+
+        document.querySelector("#added_items").append(div)
+
+    })
+}
+
+final_billing()
+
+function final_billing(){
+    let div1=document.createElement("div")
+
+    let p=document.createElement("p")
+        p.innerHTML="Cart Value"
+    let tot_price_btn=document.createElement("button")
+        tot_price_btn.innerHTML=`₹ ${billing_amount}`
+    div1.append(p,tot_price_btn)
+
+
+    let div2=document.createElement("div")
+    let p1=document.createElement("p")
+        p1.innerHTML="Retail Discount"
+    let discount=document.createElement("button")
+        discount.innerHTML=`(-) ₹ ${Retail_price-billing_amount}`
+        div2.style.color="green"
+        discount.style.color="green"
+        div2.append(p1,discount)
+    
+    let div3=document.createElement("div")
+    let delivery=document.createElement("p")
+        delivery.innerHTML="Delivery"
+
+    let delivery_charg=document.createElement("button")
+    
+        if(billing_amount<999 &&billing_amount!=0){
+            delivery_charg.innerHTML=`₹ ${200}`;
+            total_amount+=200;
+        }else{
+            delivery_charg.innerHTML=`₹ ${0}`;
+            delivery.innerHTML="Delivery (Free)"
+        }
+        div3.append(delivery,delivery_charg)
+    
+    let div4=document.createElement("div")
+    let assembly=document.createElement("p")
+        assembly.innerHTML="Assembly"
+    let asse_but=document.createElement("button")
+        asse_but.innerHTML=`₹ ${assembly_price}`
+   
+        
+    div4.append(assembly,asse_but)
+
+let tot_div =document.createElement("div")
+        tot_div.setAttribute("id","tot_div")
+    let total=document.createElement("h3")
+        total.innerHTML="Total"
+    let tot_button=document.createElement("button")
+        tot_button.innerHTML=`₹ ${total_amount}`;
+
+        
+        tot_div.append(total,tot_button)
+
+    document.querySelector("#rigth_billing").append(div1,div2,div3,div4,tot_div)
+}
+
+
+document.getElementById("add_sav_btn").addEventListener("click",saveaddres)
+
+function saveaddres(event){
+event.preventDefault()
+    let obj={
+        Name:document.getElementById("c_name").value,
+        Phone_Number:document.getElementById("c_number").value,
+        Pincode:document.getElementById("c_pincode").value,
+        Address:document.getElementById("textarea").value,
+        Place:document.getElementById("c_place").value,
+        State:document.getElementById("dropup").value,
+        Country:document.getElementById("c_country").value
+
+    }
+    alert("Address Successfully Saved")
+    location.reload()
+
+    console.log(obj)
+}
+
+
+document.getElementById("sigin_butn").addEventListener("click",signinchk)
+let userdb=JSON.parse(localStorage.getItem("userdb"))
+
+function signinchk(event){
+event.preventDefault();
+
+    let email=document.getElementById("input_gmail").value
+    let pass=document.getElementById("input_password").value
+    let yes=0;
+    for(let i=0;i<userdb.length;i++){
+
+        if(userdb[i].email==email&&userdb[i].pass==pass){
+            yes++;
+        }
+    }
+    if(yes>0){
+        alert("ur loggedin")
+    }else{
+        alert("pls register")
+    }
+    
+
+}
+
+
 
 
 </script>

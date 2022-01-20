@@ -25,6 +25,10 @@
     color: #ef3523;
     
 }
+#root-pat>a{
+    text-decoration: none;
+    color: #ef3523;
+}
 /* footer */
 #pay_ment_nav_bar_footer{
     height: 300px;
