@@ -161,10 +161,10 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-let billing_amount=2000;
-let Retail_price=4000;
+let billing_amount=0;   //actual price   
+let Retail_price=4000;  //scratch price
 let assembly_price=1347;
-let total_amount=billing_amount+assembly_price;
+let total_amount=0;
 let cart_item=JSON.parse(localStorage.getItem("cartdb"))||[];
 
     let cart_display_button=document.getElementById("cart_display_button")
@@ -403,6 +403,8 @@ function final_billing(){
         }else{
             delivery_charg.innerHTML=`₹ ${0}`;
             delivery.innerHTML="Delivery (Free)"
+            delivery.style.color="#f16521"
+
         }
         div3.append(delivery,delivery_charg)
     
@@ -415,6 +417,9 @@ function final_billing(){
         
     div4.append(assembly,asse_but)
 
+
+
+    total_amount+=billing_amount+assembly_price
 let tot_div =document.createElement("div")
         tot_div.setAttribute("id","tot_div")
     let total=document.createElement("h3")

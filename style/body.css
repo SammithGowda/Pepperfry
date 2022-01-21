@@ -77,10 +77,6 @@ margin: 20px;
 width: 100px;
 height: 40px;
 }
-#add_div{
-
-
-}
 #Shipping_text{
   /* border: 2px solid blue; */
   width: 85%;
@@ -210,16 +206,20 @@ height: 40px;
 }
 #cart_add_div{
   height: 100px;
-  width:30%;
-  border: 2px solid black;
+  /* width: 30%; */
+  border: 2px solid #f5f5f5;
   margin: 5px;
   display: flex;
+  /* border: 2px solid red; */
   background-color: white;
 }
 #added_items{
   /* border: 2px solid blue; */
-  display: flex;
-  flex-wrap: wrap;
+  height:150px;
+  display: grid;
+  grid-template-columns: repeat(12,30%);
+  overflow-x: scroll;
+ 
 }
 #div_two{
   /* border: 2px solid brown; */
@@ -234,8 +234,8 @@ height: 40px;
 }
 #rigth_billing{
   height: 200px;
-  width: 100%;
-  /* border: 2px solid red; */
+  width: 90%;
+  border: 2px solid rgb(226, 221, 221);
   margin-top: 20px;
   
 }
