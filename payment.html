@@ -239,6 +239,7 @@ function cards(){
 
     let button=document.createElement("button")
         button.setAttribute("id","proceed_btn")
+        button.addEventListener("click",next_page)
         button.innerHTML=`PROCEED ${billing_amount}`
     
         let note= document.createElement("p")
@@ -304,6 +305,7 @@ function credit_card(){
 
     let button=document.createElement("button")
         button.setAttribute("id","proceed_btn")
+        button.addEventListener("click",next_page)
         button.innerHTML=`PROCEED ${billing_amount}`
     
         let note= document.createElement("p")
@@ -353,6 +355,7 @@ function display(data){
 
         let ruppes=document.createElement("p")
             ruppes.innerHTML=`₹ ${el.price}`
+            ruppes.style.color="#ef3523";
 
         div_three.append(qty,ruppes)
 
@@ -479,6 +482,11 @@ event.preventDefault();
 
 }
 
+
+
+function next_page(){
+    window.location.href="cardDetalis.html"
+}
 
 
 
