@@ -1,4 +1,4 @@
-var data = JSON.parse(localStorage.getItem("wishlist"));
+var data = JSON.parse(localStorage.getItem("Wishlist"));
 
   
 cart = JSON.parse(localStorage.getItem("cart")) || [];

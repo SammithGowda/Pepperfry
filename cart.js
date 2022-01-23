@@ -1,4 +1,4 @@
-var cart =JSON.parse(localStorage.getItem('cart'))||[];
+var cart =JSON.parse(localStorage.getItem('Cart'))||[];
 var payment = JSON.parse(localStorage.getItem("payment")) || [];
  var cartvalue = JSON.parse(localStorage.getItem("cartvalue"))||[];
  var arr = []
