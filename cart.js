@@ -10,9 +10,9 @@ var payment = JSON.parse(localStorage.getItem("payment")) || [];
          count:1
      }
      arr.push(obj)
-     payment.push(obj)
+    //  payment.push(obj)
  })
-
+ payment.push(arr);
  console.log(arr)
  display(arr)
  updateCheckoutSection(arr)
