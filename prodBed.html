@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Products | Beds</title>
+    <link rel="stylesheet" href="/styles/productDetail.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />  
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/footer.css">
+</head>
+<body>
+    <header id="header"></header>
+    <div id="main">
+        <!-- side bar section div  -->
+        <div id="sort-sec">
+          
+        </div>
+        <!-- data div in which data is appended -->
+        <div id="data">
+
+        </div>
+
+    </div>
+    <footer id="footer"></footer>
+    
+</body>
+</html>
+<script type="module">
+    import appendData from "/scripts/function.js";
+    import struc from "/components/structure.js"
+    
+    var bed = [
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/c/a/494x544/carol-queen-bed-in-wenge-finish---mintwud-by-pepperfry-carol-queen-bed-in-wenge-finish---mintwud-by--bg1ffu.jpg",
+            desc: "Carol Queen Bed In Wenge Finish",
+            name: "Mintwud",
+            dprice: 8950,
+            mrp: 29999,
+            disc: "70% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/a/d/494x544/admire-sheesham-wood-queen-size-bed-in-honey-colour-by-duroflex-admire-sheesham-wood-queen-size-bed--i6ltfw.jpg",
+            desc: "Admire Queen Size Bed In Honey Colour",
+            name: "Duroflex",
+            dprice: 19975,
+            mrp: 23500,
+            disc: "15% Off",
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/c/a/494x544/carnival-queen-size-bed-in-wenge-finish-by-spacewood-carnival-queen-size-bed-in-wenge-finish-by-spac-w0bl8p.jpg",
+            desc: "Carnival Queen Size Bed In Wenge Finish",
+            name: "Spacewood",
+            dprice: 12635,
+            mrp: 21431,
+            disc: "41% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/a/u/494x544/auriga-queen-size-sheesham-bed-in-natural-finish-by-wakefit-auriga-queen-size-sheesham-bed-in-natura-dbqxti.jpg",
+            desc: "Auriga Queen Size Bed In Natural Finish",
+            name: "Wakefit",
+            dprice: 15676,
+            mrp: 20627,
+            disc: "24% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/a/n/494x544/andromeda-king-size-sheesham-bed-in-natural-finish-by-wakefit-andromeda-king-size-sheesham-bed-in-na-p8qwhy.jpg",
+            desc: "Andromeda King Size Bed In Natural Finish",
+            name: "Wakefit",
+            dprice: 16720,
+            mrp: 22000,
+            disc: "24% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/r/a/494x544/raliegh-single-bed-in-rustic-teak-finish-by-woodsworth-raliegh-single-bed-in-rustic-teak-finish-by-w-i55aii.jpg",
+            desc: "Raliegh Single Bed In Rustic Teak Finish",
+            name: "Woodsworth",
+            dprice: 16999,
+            mrp: 25999,
+            disc: "35% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/a/d/494x544/admire-sheesham-wood-king-size-bed-in-honey-colour-by-duroflex-admire-sheesham-wood-king-size-bed-in-g8omig.jpg",
+            desc: "Admire King Size Bed In Honey Colour",
+            name: "Duroflex",
+            dprice: 21038,
+            mrp: 24750,
+            disc: "15% Off",
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/p/l/494x544/plush-sheesham-wood-bed-king--size-in-rich-honey-finish-by-duroflex-plush-sheesham-wood-bed-king--si-zoqo1r.jpg",
+            desc: "Plush King Size Bed In Rich Honey Finish",
+            name: "Duroflex",
+            dprice: 39000,
+            mrp: 60000,
+            disc: "35% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/d/a/494x544/daiki-queen-size-bed-in-wenge-finish-by-mintwud-daiki-queen-size-bed-in-wenge-finish-by-mintwud-hwhg3y.jpg",
+            desc: "Daiki Queen Size Bed In Wenge Finish",
+            name: "Mintwud",
+            dprice: 10700,
+            mrp: 22497,
+            disc: "52% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/d/a/494x544/dazzle-king-bed-in-walnut-finish-by-hometown-dazzle-king-bed-in-walnut-finish-by-hometown-libi2g.jpg",
+            desc: "Dazzle King Size Bed In Walnut Finish",
+            name: "HomeTown",
+            dprice: 14249,
+            mrp: 33500,
+            disc: "57% Off",
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/r/h/494x544/rhoda-queen-size-bed-in-wenge-finish---mintwud-by-pepperfry-rhoda-queen-size-bed-in-wenge-finish---m-hqyjgp.jpg",
+            desc: "Rhoda Queen Size Bed In Wenge Finish",
+            name: "Mintwud",
+            dprice: 10199,
+            mrp: 28999,
+            disc: "65% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/h/e/494x544/hertford-solid-wood-queen-size-bed-in-rustic-teak-finish-by-woodsworth-hertford-solid-wood-queen-siz-tss9lo.jpg",
+            desc: "Hertford Solid Wood Queen Size Bed In Rustic Teak Finish",
+            name: "Woodsworth",
+            dprice: 26999,
+            mrp: 40999,
+            disc: "34% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/l/o/494x544/lorenzo-solid-wood-queen-size-bed-in-provincial-teak-finish-by-woodsworth-lorenzo-solid-wood-queen-s-vetbkv.jpg",
+            desc: "Lorenzo Solid Wood Queen Size Bed In Provincial Teak Finish",
+            name: "Woodsworth",
+            dprice: 30999,
+            mrp: 65999,
+            disc: "53% Off",
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/c/h/494x544/chippa-solid-wood-king-size-bed--72-78--in-tubbaq-finish---mudramark-by-pepperfry-chippa-solid-wood--csbj5n.jpg",
+            desc: "Chippa Solid Wood King Size Bed In Tubbaq Finish",
+            name: "Mudramark",
+            dprice: 42999,
+            mrp: 64999,
+            disc: "34% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/c/h/494x544/chippa-solid-wood-queen-size-bed--60-78--in-tubbaq-finish---mudramark-by-pepperfry-chippa-solid-wood-qvfwcr.jpg",
+            desc: "Chippa Solid Wood Queen Size Bed In Tubbaq Finish",
+            name: "Mudramark",
+            dprice: 39499,
+            mrp: 59999,
+            disc: "34% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/d/e/494x544/dexter-queen-size-bed-in-cappucino-colour-by--home-dexter-queen-size-bed-in-cappucino-colour-by--hom-tsx1hg.jpg",
+            desc: "Dexter Queen Size Bed In Cappucino Colour",
+            name: "@Home",
+            dprice: 27900,
+            mrp: 75900,
+            disc: "63% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/s/t/494x544/sterling-queen-size-bed-in-walnut-colour-by--home-sterling-queen-size-bed-in-walnut-colour-by--home-ur0qjd.jpg",
+            desc: "Dexter Queen Size Bed In Cappucino Colour",
+            name: "@Home",
+            dprice: 22900,
+            mrp: 57900,
+            disc: "60% Off",
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/g/u/494x544/gunner-queen-size-bed-headboard---box-storage-in-wenge-colour-by--home-gunner-queen-size-bed-headboa-key93h.jpg",
+            desc: "Gunner Queen Size Bed Headboard & Box Storage In Wenge Colour",
+            name: "@Home",
+            dprice: 16900,
+            mrp: 35900,
+            disc: "53% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/p/l/494x544/plush-queen-size-bed-in-rich-honey-finish-by-duroflex-plush-queen-size-bed-in-rich-honey-finish-by-d-xnsl8e.jpg",
+            desc: "Plush Queen Size Bed In Rich Honey Finish",
+            name: "Duroflex",
+            dprice: 35750,
+            mrp: 55000,
+            disc: "35% Off",
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/c/u/494x544/curve-queen-size-bed-in-rich-honey-finish-by-duroflex-curve-queen-size-bed-in-rich-honey-finish-by-d-wcu375.jpg",
+            desc: "Curve Queen Size Bed In Rich Honey Finish",
+            name: "Duroflex",
+            dprice: 35750,
+            mrp: 55000,
+            disc: "35% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/c/u/494x544/curve-sheesham-wood-bed-king-size-in-rich-honey-finish-by-duroflex-curve-sheesham-wood-bed-king-size-uwnoi7.jpg",
+            desc: "Curve King Size Bed In Rich Honey Finish",
+            name: "Duroflex",
+            dprice: 39000,
+            mrp: 60000,
+            disc: "35% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/m/i/494x544/mitsy-solid-wood-single-size-bed-in-rustic-teak-finish---woodsworth-by-pepperfry-mitsy-solid-wood-si-aodioa.jpg",
+            desc: "Mitsy Solid Wood Single Size Bed In Rustic Teak Finish",
+            name: "Woodsworth",
+            dprice: 20999,
+            mrp: 29999,
+            disc: "30% Off",
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/m/i/494x544/mitsy-solid-wood-queen-size-bed-in-rustic-teak-finish---woodsworth-by-pepperfry-mitsy-solid-wood-que-zxfqrt.jpg",
+            desc: "Mitsy Solid Wood Queen Size Bed In Rustic Teak Finish",
+            name: "Woodsworth",
+            dprice: 40999,
+            mrp: 58999,
+            disc: "31% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/h/e/494x544/helios-alex-brown-queen-size-bed-in-brown-colour-by-home-centre-helios-alex-brown-queen-size-bed-in--596h6d.jpg",
+            desc: "Helios Alex Brown Queen Size Bed In Brown Colour",
+            name: "Home Centre",
+            dprice: 15950,
+            mrp: 26583,
+            disc: "40% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/h/e/494x544/helios-aston-queen-size-bed-in-brown--colour-by-home-centre-helios-aston-queen-size-bed-in-brown--co-9buwsf.jpg",
+            desc: "Helios Aston Queen Size Bed In Brown Colour",
+            name: "Home Centre",
+            dprice: 39550,
+            mrp: 79100,
+            disc: "50% Off",
+        },
+    ]
+    let loc = document.getElementById("data");
+    let func = appendData(bed, loc);
+
+    let container = document.getElementById("sort-sec");
+    container.innerHTML = struc();
+</script>
+<script type="module" src="/scripts/index.js"></script>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Products | Sofa</title>
+    <link rel="stylesheet" href="/styles/productDetail.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />  
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/footer.css">
+</head>
+<body>
+    <header id="header"></header>
+    <div id="main">
+        <!-- side bar section div  -->
+        <div id="sort-sec">
+          
+        </div>
+        <!-- data div in which data is appended -->
+        <div id="data">
+
+        </div>
+
+    </div>   
+    <footer id="footer"></footer>
+</body>
+</html>
+<script type="module">
+    import appendData from "/scripts/function.js";
+    import struc from "/components/structure.js"
+    var sofa = [
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/e/a/494x544/ease-2-seater-sofa-in-grey-colour-by-duroflex-ease-2-seater-sofa-in-grey-colour-by-duroflex-3oaiqc.jpg",
+            desc: "Ease 2 Seater Sofa in Grey Colour",
+            name: "Duroflex",
+            dprice: 14178,
+            mrp: 23630,
+            disc: "40% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/e/a/494x544/ease-2-seater-sofa-in-brown-colour-by-duroflex-ease-2-seater-sofa-in-brown-colour-by-duroflex-gzkkfu.jpg",
+            desc: "Ease 2 Seater Sofa in Brown Colour",
+            name: "Duroflex",
+            dprice: 14178,
+            mrp: 23630,
+            disc: "40% Off",
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/e/a/494x544/ease-3-seater-sofa-in-biege-colour-by-duroflex-ease-3-seater-sofa-in-biege-colour-by-duroflex-dgbars.jpg",
+            desc: "Ease 3 Seater Sofa in Biege Colour",
+            name: "Duroflex",
+            dprice: 20160,
+            mrp: 33600,
+            disc: "40% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/e/l/494x544/elysian-1-seater-manual-recliner-in-brown-colour-by-duroflex-elysian-1-seater-manual-recliner-in-bro-pkgvfm.jpg",
+            desc: "Elysian 1 Seater Manual Recliner in Brown Colour",
+            name: "Duroflex",
+            dprice: 15480,
+            mrp: 25800,
+            disc: "40% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/e/l/494x544/elysian-1-seater-manual-recliner-in-grey-colour-by-duroflex-elysian-1-seater-manual-recliner-in-grey-k6eamd.jpg",
+            desc: "Elysian 1 Seater Manual Recliner in Grey Colour",
+            name: "Duroflex",
+            dprice: 15480,
+            mrp: 25800,
+            disc: "40% Off",
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/a/v/494x544/avalon-1-seater-manual-recliner-in-biege-colour-by-duroflex-avalon-1-seater-manual-recliner-in-biege-hkcmwf.jpg",
+            desc: "Avalon 1 Seater Manual Recliner in Biege Colour",
+            name: "Duroflex",
+            dprice: 17370,
+            mrp: 28950,
+            disc: "40% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/e/l/494x544/elysian-1-seater-manual-recliner-in-biege-colour-by-duroflex-elysian-1-seater-manual-recliner-in-bie-3p54ln.jpg",
+            desc: "Elysian 1 Seater Manual Recliner in Biege Colour",
+            name: "Duroflex",
+            dprice: 15480,
+            mrp: 25800,
+            disc: "40% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/d/i/494x544/diego-sofa-with-ottoman---cub-holder-in-grey-colour-and-side-table-in-dark-brown-colour-diego-sofa-w-gzpmoq.jpg",
+            desc: "Diego Sofa With ottoman & cub holder In Grey Colour and Side Table In Dark Brown Colourby Muebles Casa",
+            name: "Muebles Casa",
+            dprice: 26916,
+            mrp: 51999,
+            disc: "48% Off",
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/s/n/494x544/snoozer-three-seater-sofa-in-omega-pearl-colour-by-wakefit-snoozer-three-seater-sofa-in-omega-pearl--dpzlax.jpg",
+            desc: "Snoozer Three Seater Sofa in Omega Pearl Colour",
+            name: "Wakefit",
+            dprice: 18734,
+            mrp: 23200,
+            disc: "19% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/s/n/494x544/snoozer-three-seater-sofa-in-smoke-grey-colour-by-wakefit-snoozer-three-seater-sofa-in-smoke-grey-co-gcrvkg.jpg",
+            desc: "Snoozer Three Seater Sofa in Smoke Grey Colour",
+            name: "Wakefit",
+            dprice: 19595,
+            mrp: 24267,
+            disc: "19% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/s/n/494x544/snoozer-three-seater-sofa-in-omega-grey-colour-by-wakefit-snoozer-three-seater-sofa-in-omega-grey-co-3lwnb8.jpg",
+            desc: "Snoozer Three Seater Sofa in Omega Grey Colour",
+            name: "Wakefit",
+            dprice: 18734,
+            mrp: 23200,
+            disc: "19% Off",
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/s/n/494x544/snoozer-three-seater-sofa-in-cobalt-blue-colour-by-wakefit-snoozer-three-seater-sofa-in-cobalt-blue--z8nt6m.jpg",
+            desc: "Snoozer Three Seater Sofa in Cobalt Blue Colour",
+            name: "Wakefit",
+            dprice: 19595,
+            mrp: 24267,
+            disc: "19% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/s/n/494x544/snoozer-three-seater-sofa-in-malibu-green-colour-by-wakefit-snoozer-three-seater-sofa-in-malibu-gree-dsevns.jpg",
+            desc: "Snoozer Three Seater Sofa in Malibu Green Colour",
+            name: "Wakefit",
+            dprice: 19595,
+            mrp: 24267,
+            disc: "19% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/l/u/494x544/luxury-1-seater-manual-recliner-in--coffee-brown-colour-by--home-luxury-1-seater-manual-recliner-in--ydzwdl.jpg",
+            desc: "Luxury 1 Seater Manual Recliner in Coffee Brown Colour",
+            name: "@home",
+            dprice: 24900,
+            mrp: 49900,
+            disc: "50% Off",
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/d/a/494x544/dark-pepper-1-seater-sofa-in-charcoal-grey-colour-by-fine-group-dark-pepper-1-seater-sofa-in-charcoa-diwdyt.jpg",
+            desc: "Dark Pepper 1 Seater Sofa in Charcoal Grey Colour",
+            name: "Fine Group",
+            dprice: 9499,
+            mrp: 14999,
+            disc: "37% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/o/p/494x544/optima-1-seater-sofa-in-brown---beige-colour-by-adorn-homez-optima-1-seater-sofa-in-brown---beige-co-cpru86.jpg",
+            desc: "Optima 1 Seater Sofa in Brown & Grey Colour",
+            name: "Adorn Homez",
+            dprice: 8750,
+            mrp: 13999,
+            disc: "37% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/o/p/494x544/optima-1-seater-sofa-in-brown---beige-colour-by-adorn-homez-optima-1-seater-sofa-in-brown---beige-co-mqgdhf.jpg",
+            desc: "Optima 1 Seater Sofa in Black & Grey Colour",
+            name: "Adorn Homez",
+            dprice: 8750,
+            mrp: 13999,
+            disc: "37% Off",
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/o/p/494x544/optima-2-seater-sofa-in-brown---grey-colour-by-adorn-homez-optima-2-seater-sofa-in-brown---grey-colo-nfpre9.jpg",
+            desc: "Optima 2 Seater Sofa in Brown & Beige Colour",
+            name: "Adorn Homez",
+            dprice: 11500,
+            mrp: 18999,
+            disc: "39% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/o/p/494x544/optima-1-seater-sofa-in-brown---beige-colour-by-adorn-homez-optima-1-seater-sofa-in-brown---beige-co-y9qpfr.jpg",
+            desc: "Optima 1 Seater Sofa in Brown & Beige Colour",
+            name: "Adorn Homez",
+            dprice: 8750,
+            mrp: 13999,
+            disc: "37% Off",
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/o/p/494x544/optima-2-seater-sofa-in-black---grey-colour-by-adorn-homez-optima-2-seater-sofa-in-black---grey-colo-vgimju.jpg",
+            desc: "Optima 2 Seater Sofa in Black & Grey Colour",
+            name: "Adorn Homez",
+            dprice: 11500,
+            mrp: 18999,
+            disc: "39% Off",
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/o/p/494x544/optima-2-seater-sofa-in-brown---beige-colour-by-adorn-homez-optima-2-seater-sofa-in-brown---beige-co-235zdn.jpg",
+            desc: "Optima 2 Seater Sofa in Brown & Grey Colour",
+            name: "Adorn Homez",
+            dprice: 11500,
+            mrp: 18999,
+            disc: "39% Off",
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/o/p/494x544/optima-1-seater-sofa-in-brown---beige-colour-by-adorn-homez-optima-1-seater-sofa-in-brown---beige-co-2pf0yf.jpg",
+            desc: "Optima 1 Seater Sofa in Black & Brown Colour",
+            name: "Adorn Homez",
+            dprice: 8750,
+            mrp: 13999,
+            disc: "37% Off",
+        }, {
+            image: "https://ii3.pepperfry.com/media/catalog/product/o/p/494x544/optima-2-seater-sofa-in-black---brown-colour-by-adorn-homez-optima-2-seater-sofa-in-black---brown-co-pcggrd.jpg",
+            desc: "Optima 2 Seater Sofa in Black & Brown Colour",
+            name: "Adorn Homez",
+            dprice: 11500,
+            mrp: 18999,
+            disc: "39% Off",
+        }, {
+            image: "https://ii1.pepperfry.com/media/catalog/product/o/p/494x544/optima-2-seater-sofa-in-black---red-colour-by-adorn-homez-optima-2-seater-sofa-in-black---red-colour-ufo19m.jpg",
+            desc: "Optima 2 Seater Sofa in Black & Red Colour",
+            name: "Adorn Homez",
+            dprice: 11500,
+            mrp: 18999,
+            disc: "39% Off",
+        }, {
+            image: "https://ii3.pepperfry.com/media/catalog/product/s/n/494x544/snooky-2-seater-sofa-in-grey-colour-by-febonic-snooky-2-seater-sofa-in-grey-colour-by-febonic-ui5gz1.jpg",
+            desc: "Snooky 2 Seater Sofa In Grey Colour",
+            name: "Febonic",
+            dprice: 16631,
+            mrp: 26999,
+            disc: "38% Off",
+        }
+    ];
+    let loc = document.getElementById("data");
+    let func = appendData(sofa, loc);
+
+    let container = document.getElementById("sort-sec");
+    container.innerHTML = struc();
+</script>
+<script type="module" src="/scripts/index.js"></script>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Products | Light</title>
+    <link rel="stylesheet" href="/styles/productDetail.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />  
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/footer.css">
+</head>
+<body>
+    <header id="header"></header>
+    <div id="main">
+        <!-- side bar section div  -->
+        <div id="sort-sec">
+          
+        </div>
+        <!-- data div in which data is appended -->
+        <div id="data">
+
+        </div>
+
+    </div>
+    <footer id="footer"></footer>
+        
+</body>
+</html>
+<script type="module">
+    import appendData from "/scripts/function.js";
+    import struc from "/components/structure.js"
+    var light = [
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/5/8/494x544/581847-corona-crystal-ss-chrome-g9-7-max-42w-581847-corona-crystal-ss-chrome-g9-7-max-42w-guhdhm.jpg",
+            desc: "Corona Crystal SS ",
+            name: "Philips",
+            dprice: 34628,
+            mrp: 39350,
+            disc: "12% Off"
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/c/a/494x544/cassiel-five-layer-rose-gold-finish-contemporary-chandelier-by-kapoor-e-illuminations-cassiel-five-l-fh5a7a.jpg",
+            desc: "Cassiel Rose Gold Crystal Chandelier",
+            name: "Kapoor E Illuminations",
+            dprice: 28457,
+            mrp: 44999,
+            disc: "37% Off"
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/g/o/494x544/gold----black-cristal---metal-chandelier-by-kapoor-e-illuminations-gold----black-cristal---metal-cha-rb2zti.jpg",
+            desc: "Derek 12 Light Crystal Chandelier",
+            name: "Kapoor E Illuminations",
+            dprice: 48330,
+            mrp: 72999,
+            disc: "34% Off"
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/g/o/494x544/gold----black-cristal---metal-chandelier-by-kapoor-e-illuminations-gold----black-cristal---metal-cha-a6kjbw.jpg",
+            desc: "Derek Longitude ",
+            name: "Kapoor E Illuminations",
+            dprice: 51730,
+            mrp: 79199,
+            disc: "35% Off"
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/t/a/494x544/tamar-wooden-wood-chandelier-by-kapoor-e-illuminations-tamar-wooden-wood-chandelier-by-kapoor-e-illu-24ys9p.jpg",
+            desc: "Avigail Wooden Wood Chandelier",
+            name: "Eliante by Jainsons Lights",
+            dprice: 8476,
+            mrp: 25500,
+            disc: "15% Off"
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/h/a/494x544/hartland-gold-glass-chandelier-by-kapoor-e-illuminations-hartland-gold-glass-chandelier-by-kapoor-e--g3qkfe.jpg",
+            desc: "Hartland Gold Glass Chandelier",
+            name: "Kapoor E Illuminations",
+            dprice: 12902,
+            mrp: 20496,
+            disc: "37% Off"
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/5/8/494x544/581850-cameo-crystal-ss-chrome-g9-5-max-28w-581850-cameo-crystal-ss-chrome-g9-5-max-28w-azwuau.jpg",
+            desc: "581850 Cameo Crystal ",
+            name: "Philips",
+            dprice: 18216,
+            mrp: 20700,
+            disc: "12% Off"
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/g/o/494x544/gold-cristal---metal-chandelier-by-kapoor-e-illuminations-gold-cristal---metal-chandelier-by-kapoor--i5rffj.jpg",
+            desc: "Keys to the Kingdom ",
+            name: "Kapoor E Illuminations",
+            dprice: 44063,
+            mrp: 65199,
+            disc: "32% Off"
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/p/e/494x544/penhill-brass-metal-and-glass-chandelier-by-kapoor-e-illuminations-penhill-brass-metal-and-glass-cha-hbstpb.jpg",
+            desc: "Penhill Brass Glass Chandelier",
+            name: "Kapoor E Illuminations",
+            dprice: 17382,
+            mrp: 27999,
+            disc: "38% Off"
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/g/e/494x544/gemini-black-crystal-led-smart-voice-assist-chandelier-by-smartway-lighting-gemini-black-crystal-led-rkzdfi.jpg",
+            desc: "Gemini Black Crystal",
+            name: "Smartway Lighting",
+            dprice: 13599,
+            mrp: 39999,
+            disc: "66% Off"
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/n/o/494x544/noa-black-metal-chandelier-by-kapoor-e-illuminations-noa-black-metal-chandelier-by-kapoor-e-illumina-clacxr.jpg",
+            desc: "Sarah Black Metal Chandelier",
+            name: "Eliante by Jainsons Lights",
+            dprice: 3981,
+            mrp: 10213,
+            disc: "22% off"
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/g/o/494x544/gold-cristal---metal-chandelier-by-kapoor-e-illuminations-gold-cristal---metal-chandelier-by-kapoor--u9vaer.jpg",
+            desc: "LuxLume 12 Light Crystal",
+            name: "Kapoor E Illuminations",
+            dprice: 31789,
+            mrp: 44899,
+            disc: "29% Off"
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/w/h/494x544/white-and-silver-metal-and-crystal-chandelier-by-stello-white-and-silver-metal-and-crystal-chandelie-vgbyak.jpg",
+            desc: "Silver Shade Glass Chandelier",
+            name: "Stello",
+            dprice: 5001,
+            mrp: 7950,
+            disc: "17% off"
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/5/8/494x544/581842--allure-pendant-crystal-chrome-g9-5-max-42w-581842--allure-pendant-crystal-chrome-g9-5-max-42-slbat9.jpg",
+            desc: "581842 Allure Pendant ",
+            name: "Philips",
+            dprice: 46772,
+            mrp: 53150,
+            disc: "12% Off"
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/a/l/494x544/alexa-12-light-modern---contemporary-crystal-chandelier-kapoor-e-illuminations-alexa-12-light-modern-4oavxo.jpg",
+            desc: "Alexa 12 Light & Modern ",
+            name: "Kapoor E Illuminations",
+            dprice: 73779,
+            mrp: 98999,
+            disc: "25% Off"
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/b/r/494x544/bronze-glass-chandelier-by-eliante-by-jainsons-lights-bronze-glass-chandelier-by-eliante-by-jainsons-qcnjt8.jpg",
+            desc: "Bronze Glass Chandelier",
+            name: "Eliante by Jainsons Lights",
+            dprice: 8898,
+            mrp: 22800,
+            disc: "23% off"
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/5/8/494x544/581857-monarch-chandelier-crystal--ag-al-rod-e14-6-max-60w-581857-monarch-chandelier-crystal--ag-al--a2memt.jpg",
+            desc: "581857 Monarch Chandelier",
+            name: "Philips",
+            dprice: 34628,
+            mrp: 39350,
+            disc: "12% Off"
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/a/n/494x544/antique-aluminium-chandelier-by-decorativeray-antique-aluminium-chandelier-by-decorativeray-cqo6tv.jpg",
+            desc: "Antique Aluminium Chandelier",
+            name: "DecorativeRay",
+            dprice: 5032,
+            mrp: 12150,
+            disc: "28% off"
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/v/i/494x544/vienna-semi-flush-12-light-crystal-chandelier-kapoor-e-illuminations-vienna-semi-flush-12-light-crys-4iydig.jpg",
+            desc: "Vienna Semi Flush ",
+            name: "Kapoor E Illuminations",
+            dprice: 51169,
+            mrp: 69399,
+            disc: "26% Off"
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/1/2/494x544/120-watts-warm-white--natural-white--cold-white-smart--crystal--chandelier-by-smartway-120-watts-war-lgs3gx.jpg",
+            desc: "Amore Black Crystal",
+            name: "Smartway Lighting",
+            dprice: 14719,
+            mrp: 39999,
+            disc: "63% Off"
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/1/1/494x544/110-watts-warm-white--natural-white--cold-white-smart--crystal--chandelier-by-smartway-110-watts-war-wbtowm.jpg",
+            desc: "Polaris Black Crystal ",
+            name: "Smartway Lighting",
+            dprice: 14719,
+            mrp: 39999,
+            disc: "63% Off"
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/g/o/494x544/gold-metal-and-crystal-chandelier-by-stello-gold-metal-and-crystal-chandelier-by-stello-wbk0tz.jpg",
+            desc: "Yellow Crystal Chandelier",
+            name: "Stello",
+            dprice: 4096,
+            mrp: 6300,
+            disc: "15% off"
+        },
+        {
+            image: "https://ii3.pepperfry.com/media/catalog/product/w/h/494x544/white-brass-and-glass-chandelier-by-astral-white-brass-and-glass-chandelier-by-astral-soaef3.jpg",
+            desc: "White Glass Chandelier",
+            name: "Astral",
+            dprice: 9672,
+            mrp: 14750,
+            disc: "20% off"
+        },
+        {
+            image: "https://ii1.pepperfry.com/media/catalog/product/k/e/494x544/kensington-12-light-luxurious-crystal-chandelier-kapoor-e-illuminations-kensington-12-light-luxuriou-s3li69.jpg",
+            desc: "Kensington 12 Light ",
+            name: "Kapoor E Illuminations",
+            dprice: 57629,
+            mrp: 81299,
+            disc: "29% Off"
+        },
+        {
+            image: "https://ii2.pepperfry.com/media/catalog/product/a/n/494x544/antique-aluminium-chandelier-by-decorativeray-antique-aluminium-chandelier-by-decorativeray-grtusx.jpg",
+            desc: "Antique Aluminium Chandelier",
+            name: "DecorativeRay",
+            dprice: 6170,
+            mrp: 12150,
+            disc: "19% off"
+        },
+    ]
+    let loc = document.getElementById("data");
+    let func = appendData(light, loc);
+
+    let container = document.getElementById("sort-sec");
+    container.innerHTML = struc();
+</script>
+<script type="module" src="/scripts/index.js"></script>
