@@ -26,7 +26,7 @@
  <li>Abishek choubey</li>
  <li>Sammith gowda</li>
  <li>Prashanth tiwari</li>
- <li>Aniket</li>
+ <li>Vishnu Vardhan</li>
 </ul>
   
   <h3>Screenshots</h3>
