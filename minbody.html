@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #contBox{
+            width: 88%;
+            margin: auto;
+            /* border: 1px solid black; */
+        }
+        #bigslider{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 430px;
+            /* border: 1px solid black; */
+        }
+        #bigslider> div:nth-child(1){
+            width: 73%;
+            height: 430px;
+            /* border: 1px solid yellow; */
+        }
+        #bigslider > div:nth-child(2){
+            width: 26%;
+            height: 430px;
+            /* border: 1px solid red; */
+        }
+        #statick img{
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+        }
+        #slider img{
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+        }
+        @media only screen and (max-width: 700px) {
+            #bigslider> div:nth-child(1){
+                width: 100%;           
+            }
+            #bigslider > div:nth-child(2){
+                display: none;
+            }
+        } 
+        #fix{
+            margin-top: 15px;
+            width: 100%;
+            height: 100px;
+        }
+        #fix>img{
+            width: 100%;
+            height: 100%;
+        }
+        /* <!-- sliderEnded --> */
+        #memories{
+            /* border: 1px solid black; */
+            width: 100%;
+            height: 350px;
+            margin-top: 20px;
+            
+        }
+        #memoriesDiv {
+            display: grid;
+            grid-template-columns: repeat(4,24%);
+            justify-content: space-between;
+            height:280px;
+           
+        }
+        .eachdiv{
+            height: 100%;
+            text-align: left;
+        }
+        .eachdiv > div{
+            width: 100%;
+            height: 85%;
+        }
+        .eachdiv > div img{
+            width: 100%;
+            height: 100%;
+        }
+        .eachdiv>p{
+            font-size:x-large;
+        }
+        @media only screen and (max-width: 700px) {
+            #kidsDiv{
+                display: none;
+            }
+            #memories{
+                width: 100%;
+                height: 270px;
+                margin-bottom: 20px;
+            }
+            #memoriesDiv {
+                display: grid;
+                grid-template-columns: repeat(3,33%);
+            }
+            .eachdiv>p{
+                font-size:larger;
+            }
+        }
+        /* nextCSsEnded */
+       
+        #infuse{
+            /* height: 400px; */
+            width: 100%;
+        }
+        #infuse-cont{
+            display: grid;
+            grid-template-columns: repeat(3,32.5%);
+            justify-content: space-between;
+            height:auto;
+            /* auto aur perticular height */
+            width: 100%;
+            top: 0%;
+            /* border: 4px solid orange; */
+        }
+        #infuse-cont > div{
+            height: 100%;
+        }
+        #infuse-cont > div img{
+            width: 100%;
+            height: 100%;
+        }
+        #fourImg{
+            display: grid;
+            justify-content: space-between;
+            align-content: space-between;
+            grid-template-columns: repeat(2,49%);
+            grid-template-rows: repeat(2,49%);
+            /* border: 1px solid yellow; */
+        }
+
+
+        /* end */
+        #handPicked-div{
+            width: 100%;
+            height: 410px;
+            display: grid;
+            grid-template-columns: repeat(3,33%);
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .bg-img{
+            width: 100%;
+            height: 350px;
+        }
+        #handPicked-div img{
+            width: 100%;
+            height: 100%;
+        }
+        #handPicked-div h4{
+            margin-bottom: 0px;
+            font-weight: 900;
+            font-size: 22px;
+        }
+
+        @media only screen and (max-width: 700px) {
+            #handPicked-div{
+                grid-template-columns: repeat(2,49%);
+                justify-content: space-between;
+            }
+            #handPicked-div > div:nth-child(3){
+                display: none;
+            }
+        }
+
+        /* 555555555555555555555555555555 */
+        #handPicked-div2{
+            width: 100%;
+            height: 410px;
+            display: grid;
+            grid-template-columns: repeat(4,24%);
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .bg-img{
+            width: 100%;
+            height: 350px;
+        }
+        #handPicked-div2 img{
+            width: 100%;
+            height: 100%;
+        }
+        #handPicked-div2 h4{
+            margin-bottom: 0px;
+            font-weight: 900;
+            font-size: 22px;
+        }
+        @media only screen and (max-width: 700px) {
+            #handPicked-div2{
+                height: fit-content;
+                grid-template-columns: repeat(2,49%);
+                grid-template-rows: auto auto;
+                justify-content: space-between;
+            }
+        }
+        /* %%%%%%%%%%%%%%%%%% */
+
+        #brandsDiv{
+            width: 100%;
+            height: 200px;
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: repeat(6,15.5%);
+        }
+        #brandsDiv > div{
+            height: 200px;
+            width: 100%;
+        }
+        #brandsDiv img{
+            height: 100%;
+            width: 100%;
+        }
+        @media only screen and (max-width: 800px) {
+            #brandsDiv{
+                width: 100%;
+                height: 310px;
+                display: grid;
+                justify-content: space-between;
+                grid-template-columns: repeat(3,33%);
+                grid-gap: 7px;
+            }
+            #brandsDiv > div{
+                height: 150px;
+                width: 100%;
+            }
+        }
+        
+        /* end */
+        #modular{
+            display: grid;
+            grid-template-columns: repeat(2,49%);
+            justify-content: space-between;
+            grid-gap: 2%;
+            margin-top: 30px;
+            width: 100%;
+            /* height: 400px; */
+          
+        }
+        #modular > div{
+            height: 400px;
+           
+        }
+        #modular > div img{
+            height: 100%;
+            width: 100%;
+        }
+        @media only screen and (max-width: 800px) {
+            #modular > div{
+                height: 100%;
+                height: 200px;
+            }
+        }
+
+            /* modular css ended */
+        #bigbull{
+            width: 100%;
+            height: 500px;
+            margin-top: 45px;
+            background-image: url("https://ii1.pepperfry.com/images/hp_more_from_store_bg.jpg");
+            background-size: cover;
+        }
+        #entire{
+            display: flex;
+            justify-content: space-between;
+            width: 75%;
+            height: 400px;
+            padding-left: 5%;
+        }
+        #entire div{
+            margin-top: 0px;
+            
+        }
+            .hp-more-frm-card {
+                padding: 10px 0 0;
+            }
+            
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                color: black;
+                font-size: 14px;
+            }
+            a{
+                color: rgb(53, 53, 53);
+                font-weight: lighter;
+                font-size: 13px;
+            }
+            a:hover{
+                color: rgb(255, 196, 0);
+                text-decoration: none;
+            }
+            .hp-more-frm-card-ttl{
+                font-size: x-large;
+                color: black;
+                font-weight: 500;
+            }
+    .hp-more-frm-card {
+        padding: 10px 0 0;
+    }
+    @media only screen and (max-width: 800px) {
+        #entire{
+            width: 100%;
+        }
+        .hp-more-frm-card-ttl{
+            font-size: large;
+        }
+    }
+
+            /* endthe end */
+
+
+    #contBox2{
+        width: 88%;
+        margin: auto;
+        /* border: 1px solid black; */
+    }
+    #cus-rating{
+        height: 400px;
+        width: 100%;
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(3,32%);
+        /* border: 1px solid red; */
+    }
+    #cus-rating > div{
+        height: 400px;
+        width: 100%;
+        /* border: 1px solid teal; */
+        text-align: left;
+    }
+    #cus-rating > div > img{
+        height: 250px;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    #cus-rating > div > p{
+        font-size: 16px;
+        margin-bottom: 20px;
+        color: rgba(0, 0, 0, 0.993);
+        font-weight: 500;
+    }
+    #cus-rating > div > h4{
+        font-size: 15px;
+        margin: 0px;
+        padding: 0%;
+        color: rgba(0, 0, 0, 0.993);
+        /* font-weight: 500; */
+    }
+    #cus-rating > div > h5{
+        font-size: 15px;
+        margin: 0px;
+        padding: 0%;
+        
+    }
+    @media only screen and (max-width: 800px) {
+            #cus-rating > div > p,h5{
+                font-size: 12px;
+            }
+        }
+
+    #goTop{
+        margin-left: 88%;
+        /* position: fixed; */
+        position:fixed;
+    }
+    </style>
+</head>
+<body>
+    <div id="contBox">
+        <!-- sliderStart -->
+        <div id="bigslider">
+            <div id="slider">
+                <a href="product.html">
+                    <img id="slide-img" src="" alt="">
+                </a>
+            </div>
+            <div id="statick">
+                <img src="https://ii2.pepperfry.com/media/wysiwyg/banners/NewLaunches_RHS_2X_702x1050_100122.jpg" alt="">
+            </div>           
+        </div>
+        
+        <div id="fix">
+            <img src="https://ii3.pepperfry.com/media/wysiwyg/banners/2021_web_regBanner_13012022.jpg" alt="">
+        </div>
+        <img id="goTop" onclick="topFunction()" src="https://ii1.pepperfry.com/images/svg/w21-back-to-top-icon.svg" alt="">
+        <!-- sliderEnded -->
+        <div id="memories">
+            <h2>Make Room For Memories</h2>
+            <div id="memoriesDiv">
+
+               <div class="eachdiv">
+                   <div>
+                       <a href="product.html"><img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_memories_web_21122021_1.jpg" alt=""></a>
+                   </div>
+                   <p>Living Room</p>
+               </div>
+               <div class="eachdiv">
+                   <div>
+                       <a href="product.html"><img src="https://ii2.pepperfry.com/media/wysiwyg/banners/WEB_WFH.jpg" alt=""></a>
+                   </div>
+                   <p>Work From Home</p>
+               </div>
+               <div class="eachdiv">
+                   <div>
+                       <a href="product.html"><img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Homepage_memories_web_21122021_3.jpg" alt=""></a>
+                   </div>
+                   <p>Bedroom</p>
+               </div>
+               <div class="eachdiv" id="kidsDiv">
+                   <div>
+                       <a href="product.html"><img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_memories_web_21122021_4.jpg" alt=""></a>
+                   </div>
+                   <p>Kids Room</p>
+               </div>
+
+            </div>           
+        </div>        
+         <!-- riesEnded -->
+        <div id="infuse">
+            <h2>Infuse Oodles Of Warmth</h2>
+            <div id="infuse-cont">
+                <div><a href="product.html"><img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Home_invoke_web_24122021_1.jpg" alt=""></a></div>
+                <div><a href="product.html"><img src="https://ii3.pepperfry.com/media/wysiwyg/banners/WEB_SIDEBOARDS.jpg" alt=""></a></div>
+                <div id="fourImg">
+                    <div><a href="product.html"><img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Home_invoke_web_27122021_3.jpg" alt=""></a></div>
+                    <div><a href="product.html"><img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Home_invoke_web_24122021_4.jpg" alt=""></a></div>
+                    <div><a href="product.html"><img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Home_invoke_web_24122021_5.jpg" alt=""></a></div>
+                    <div><a href="product.html"><img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Home_invoke_web_24122021_6.jpg" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+        <div id="handPicked">
+            <h2>Handpicked For Your Home</h2>
+            <div id="handPicked-div">
+                <div>
+                   <div class="bg-img">
+                       <a href="product.html"><img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Home_collection_web_21122021_4.jpg" alt=""></a>
+                    </div>
+                    <h4>Tectona</h4>
+                    <p>Elegent & Sleek</p>
+                </div>
+                <div>
+                    <div class="bg-img">
+                        <a href="product.html"><img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Home_collection_web_21122021_5.jpg" alt=""></a>
+                    </div>
+                    <h4>Siramika</h4>
+                    <p>Painted Majolica</p>
+                </div>
+                <div>
+                    <div class="bg-img">
+                        <a href="product.html"><img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Home_collection_web_21122021_6.jpg" alt=""></a>
+                    </div>
+                    <h4>Azalea</h4>
+                    <p>Glam & Grace</p>
+                </div>
+            </div>
+        </div>
+        <div id="handPicked2">
+            <h2>Cherry On The Top</h2>
+            <div id="handPicked-div2">
+                <div>
+                   <div class="bg-img">
+                       <a href="product.html"><img src="https://ii2.pepperfry.com/media/wysiwyg/banners/home_decor_web_21122021_1.jpg" alt=""></a>
+                    </div>
+                    <h4>Metal Wall Arts</h4>
+                    <p>947 Options</p>
+                </div>
+                <div>
+                    <div class="bg-img">
+                        <a href="product.html"><img src="https://ii3.pepperfry.com/media/wysiwyg/banners/WEB_TABLELAMP.jpg" alt=""></a>
+                    </div>
+                    <h4>Table Lamps</h4>
+                    <p>2307 Options</p>
+                </div>
+                <div>
+                    <div class="bg-img">
+                        <a href="product.html"><img src="https://ii1.pepperfry.com/media/wysiwyg/banners/home_decor_web_21122021_3.jpg" alt=""></a>
+                    </div>
+                    <h4>Pots and Planters</h4>
+                    <p>1105 Options</p>
+                </div>
+                <div>
+                    <div class="bg-img">
+                        <a href="product.html"><img src="https://ii2.pepperfry.com/media/wysiwyg/banners/home_decor_web_31122021_41.jpg" alt=""></a>
+                    </div>
+                    <h4>Carpets</h4>
+                    <p>2184 Options</p>
+                </div>
+            </div>
+        </div>
+        <div id="brands">
+            <h2>Decor Brands You Need To Know About</h2>
+            <div id="brandsDiv">
+                <div>
+                    <a href="product.html"><img src="https://ii2.pepperfry.com/media/wysiwyg/banners/hp-brand-1-27-dec.jpg" alt=""></a>
+                </div>
+                <div>
+                    <a href="product.html"><img src="https://ii3.pepperfry.com/media/wysiwyg/banners/hp-brand-6-27-dec.jpg" alt=""></a>
+                </div>
+                <div>
+                    <a href="product.html"><img src="https://ii1.pepperfry.com/media/wysiwyg/banners/hp-brand-5-27-dec.jpg" alt=""></a>
+                </div>
+                <div>
+                    <a href="product.html"><img src="https://ii2.pepperfry.com/media/wysiwyg/banners/hp-brand-4-27-dec.jpg" alt=""></a>
+                </div>
+                <div>
+                    <a href="product.html"><img src="https://ii3.pepperfry.com/media/wysiwyg/banners/hp-brand-3-27-dec.jpg" alt=""></a>
+                </div>
+                <div>
+                    <a href="product.html"><img src="https://ii1.pepperfry.com/media/wysiwyg/banners/hp-brand-2-27-dec.jpg" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div id="modular">
+            <div>
+                <a href="product.html"><img src="https://ii2.pepperfry.com/media/wysiwyg/banners/hp_explore_mattresses.jpg" alt=""></a>
+            </div>
+            <div>
+                <a href="product.html"><img src="https://ii3.pepperfry.com/media/wysiwyg/banners/hp_explore_kitchen.jpg" alt=""></a>
+            </div>
+        </div>       
+    </div>
+   <div id="bigbull">
+       <h2 style=" padding-left: 5%;padding-top: 10px;">More From The Store</h2>
+        <div id="entire">
+            
+            <div class="">
+                <div class="hp-more-frm-card">
+                <div class="hp-more-frm-card-ttl">Furniture</div>
+                <ul class="">
+                <li class=""><a href="">Sofas &amp; Recliners</a></li>
+                <li class=""><a href="">Seating</a></li>
+                <li class=""><a href="">Chairs</a></li>
+                <li class=""><a href="">Cabinetry</a></li>
+                <li class=""><a href="">Tables</a></li>
+                <li class=""><a href=>Dining</a></li>
+                <li class=""><a href=>&amp; Teens</a></li>
+                <li class=""><a href=>Home Office</a></li>
+                <li class=""><a href=>Sofa Chairs</a></li>
+                <li class=""><a href=>Entertainment Units</a></li>
+                <li class=""><a href=_>Outdoor</a></li>
+                <li class=""><a href=>Bar Furniture</a></li>
+                <li class=""><a href=>Furniture &amp; Home Services</a></li>
+                </ul>
+                </div>
+            </div>
+            <div>
+                <div class="hp-more-frm-block hp-more-frm-block-two">
+                    <div class="hp-more-frm-card">
+                    <div class="hp-more-frm-card-ttl ">Sofas &amp; Recliners</div>
+                    <ul class="">
+                    <li class=""><a href=>By Size</a></li>
+                    <li class=""><a href=>By Type</a></li>
+                    <li class=""><a href=></li>
+                    <li class=""><a href=>By Material</a></li>
+                    <li class=""><a href=>Sofa Chairs</a></li>
+                    </ul>
+                    </div>
+                    <div class="hp-more-frm-card">
+                    <div class="hp-more-frm-card-ttl ">Décor</div>
+                    <ul class="">
+                    <li class=""><a href=>Wall Shelves &amp; Cabinets</a></li>
+                    <li class=""><a href=>Clocks</a></li>
+                    <li class=""><a href=>Spiritual</a></li>
+                    <li class=""><a href=>Kids Décor</a></li>
+                    <li class=""><a href=>Mirrors</a></li>
+                    <li class=""><a href=>Photo Frames</a></li>
+                    <li class=""><a href=>Accent Furniture</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="">
+                    <div class="hp-more-frm-card">
+                    <div class="hp-more-frm-card-ttl ">Beds</div>
+                    <ul class="">
+                    <li class=""><a href=>By Storage </a></li>
+                    <li class=""><a href=>Teens </a></li>
+                    <li class=""><a href=>By Material </a></li>
+                    </ul>
+                    </div>
+                    <div class="hp-more-frm-card">
+                    <div class="hp-more-frm-card-ttl ">Furnishings</div>
+                    <ul class="">
+                    <li class=""><a href=>Bed Linen</a></li>
+                    <li class=""><a href=>Blankets &amp; Comforters </a></li>
+                    <li class=""><a href=>Carpets </a></li>
+                    <li class=""><a href=>Curtains </a></li>
+                    <li class=""><a href=>Cushion &amp; Covers </a></li>
+                    <li class=""><a href=>Bath Linen </a></li>
+                    <li class=""><a href=>Kids Furnishings </a></li>
+                    <li class=""><a href=> Services</a></li>
+                    <li class=""><a href=>Flooring </a></li>
+                    <li class=""><a href=_>Table Linen </a></li>
+                    <li class=""><a href=>Essentials </a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div >
+                    <div class="hp-more-frm-card">
+                    <div class="hp-more-frm-card-ttl ">Appliances</div>
+                    <ul class="">
+                    <li class=""><a >Mixers &amp; Processors</a></li>
+                    <li class=""><a href=>Breakfast Appliances</a></li>
+                    <li class=""><a href=>Chimneys </a></li>
+                    <li class=""><a href=>Built-in Appliances </a></li>
+                    <li class=""><a href=>Heating &amp; Cooling Appliances </a></li>
+                    <li class=""><a href=>Cleaning </a></li>
+                    <li class=""><a href=>Refrigerators </a></li>
+                    <li class=""><a href=>OTGs </a></li>
+                    <li class=""><a href=>Food Makers </a></li>
+                    <li class=""><a href=>Cooktops </a></li>
+                    <li class=""><a href=>Bar Appliances</a></li>
+                    <li class=""><a href=>Purifiers</a></li>
+                    <li class=""><a href=>Laundry</a></li>
+                    <li class=""><a href=>Televisions</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+   <div id="contBox2">
+        <h1>Happy Customers, Happy Us</h1>
+        <div id="cus-rating">
+            <div>
+                <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Testimonial_web_261221_7.jpg" alt="">
+                <p>Bought these two grey puffy stools from pepperfry. Found them to be surprisingly strong!</p>
+                <h4>Suman Senapatia</h4>
+                <h5>Visakhapatnam</h5>
+            </div>
+            <div>
+                <img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Testimonial_web_261221_8.jpg" alt="">
+                <p>I purchased Candy Study Chair in Pink Colour by Alex Daisy from pepperfry looks awesome and My...</p>
+                <h4>Satya Madhana</h4>
+                <h5>Secunderabad</h5>
+            </div>
+            <div>
+                <img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Testimonial_web_261221_9.jpg" alt="">
+                <p>Purchased an ergonomic chair, I thought it would not be fitting for me but once it got delivered, got it..</p>
+                <h4>Baba Kattubadi</h4>
+                <h5>Hyderabad</h5>
+            </div>
+        </div>
+   </div>
+</body>
+</html>
+
+
+<script>
+    let arrSlide =["https://ii1.pepperfry.com/media/wysiwyg/banners/Promo_2X_19012022_nd.jpg",
+            "https://ii1.pepperfry.com/media/wysiwyg/banners/Promo_2x_17012022_lfh.jpg",
+            "https://ii1.pepperfry.com/media/wysiwyg/banners/DinningTable_HeroBanner_23122021.jpg",
+            "https://ii2.pepperfry.com/media/wysiwyg/banners/Sofa_HeroBanner_23122021.jpg"];
+    let SlideDiv = document.getElementById('slide-img')
+    SlideDiv.src = arrSlide[0];
+    let i=0;
+    setInterval(() => {
+        i++;
+        if(i==arrSlide.length){
+            i=0;
+        }
+        SlideDiv.src = arrSlide[i];
+    }, 2000);
+
+ 
+var mybutton = document.getElementById("goTop");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
